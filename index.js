@@ -6,7 +6,6 @@ module.exports = function () {
     !proxy.utils.certMgr.ifRootCAFileExists() && proxy.utils.certMgr.generateRootCA(function () {
 
     });
-    console.log(proxy.utils.certMgr.ifRootCAFileExists());
     var options = {
         type: "http",
         port: 8001,
