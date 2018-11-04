@@ -1,11 +1,6 @@
 wechat_spider
 =====
 
-[![NPM version](https://badge.fury.io/js/wechat_spider.png)](http://badge.fury.io/js/wechat_spider)
-[![David Status](https://david-dm.org/lijinma/wechat_spider.png)](https://david-dm.org/lijinma/wechat_spider)
-
-## 【提醒】此抓取工具因为微信 api 修改无法跑通，请参考代码思路。
-
 <p align="center">
   <br>
   <b>创造不息，交付不止</b>
@@ -54,6 +49,9 @@ electedCommentNum: 被选择显示的回复数
 ### 安装 Node.js
 
 通过网站 https://nodejs.org/zh-cn/ 下载最新版本。
+#### 安装 supervisor
+
+安装完成nodejs后，通过`npm install -g supervisor`安装，主要用于源码开发用
 
 ### 安装 Python 2.x
 
@@ -78,10 +76,38 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 如果输出以上类似的信息，证明工具已经安装好了。
 
-### 安装 wechat_spider
+### 源码使用 wechat_spider
+
+#### 下载安装
 
 ```bash
-$ npm install wechat_spider -g
+git clone https://github.com/zhoutaoo/wechat_spider.git
+cd wechat_spider
+npm install
+```
+#### 启动
+
+启动命令: `./bin/wechat_spider` 或 `npm run dev`
+
+```bash
+(python27) ➜  wechat_spider git:(master) ✗ npm run dev
+
+> wechat_spider@1.0.9 dev /Users/zhoutaoo/WorkSpaces/OpenSource/wechat_spider
+> supervisor  ./bin/wechat_spider
+
+
+Running node-supervisor with
+  program './bin/wechat_spider'
+  --watch '.'
+  --extensions 'node,js,/bin/wechat_spider'
+  --exec 'node'
+
+Starting child process with 'node ./bin/wechat_spider'
+Watching directory '/Users/zhoutaoo/WorkSpaces/OpenSource/wechat_spider' for changes.
+Press rs for restarting the process.
+[AnyProxy Log][2018-11-04 17:39:36]: throttle :10000kb/s
+[AnyProxy Log][2018-11-04 17:39:37]: Http proxy started on port 8001
+[AnyProxy Log][2018-11-04 17:39:37]: web interface started on port 8002
 ```
 
 ### 测试 wechat_spider 安装正确
@@ -144,12 +170,11 @@ $ wechat_spider
  $ wechat_spider csv
 ```
 
-## 打赏
-我是金马，一个想搞点事情的程序员。如果这个小工具对你有帮助，你可以请我喝杯咖啡，谢谢 :)
+## 注
 
-![](http://xiaolai.co/img/alipay.jpeg)
-![](http://xiaolai.co/img/pay.png)
+该项目由`https://github.com/lijinma/wechat_spider` fork重构而来，原作者近期许久未更新，我调整了一下，亲测可用。
 
+如有问题，可联系：zhoutaoo@foxmail.com
 
 ## LICENSE
 
