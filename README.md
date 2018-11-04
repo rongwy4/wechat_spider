@@ -110,19 +110,6 @@ Press rs for restarting the process.
 [AnyProxy Log][2018-11-04 17:39:37]: web interface started on port 8002
 ```
 
-### 测试 wechat_spider 安装正确
-
-```bash
-$ wechat_spider --help
-
-  Usage: wechat_spider [options]
-
-  Options:
-
-    -h, --help     output usage information
-    -V, --version  output the version number
-```
-如果输出以上类似信息，证明 wechat_spider 已经安装成功
 ## 使用
 
 使用分四步，开启代理，手机设置代理，查看公众账号历史记录，接下来就开始自动抓取了，最后生成 csv。
