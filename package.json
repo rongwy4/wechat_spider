@@ -4,10 +4,11 @@
   "description": "Wechat Spider",
   "main": "index.js",
   "dependencies": {
-    "anyproxy": "^3.10.3",
+    "anyproxy": "^4.0.5",
     "commander": "^2.9.0",
     "iconv": "^2.2.3",
     "sequelize": "^3.30.4",
+    "change-case": "^3.0.2",
     "sqlite3": "^3.1.8"
   },
   "bin": {
