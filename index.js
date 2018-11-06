@@ -1,4 +1,5 @@
 var proxy = require("anyproxy");
+let admin = require("./lib/admin");
 
 module.exports = function () {
     //create cert when you want to use https features
@@ -13,12 +14,9 @@ module.exports = function () {
             enable: true,
             webPort: 8002
         },
-        throttle: 10000,
         rule: require("./lib/rule_wechat_spider.js"),
-        dbFile: null,  // optional, save request data to a specified file, will use in-memory db if not specified
         silent: false, //optional, do not print anything into terminal. do not set it when you are still debugging.
         forceProxyHttps: true
     };
-    var server = new proxy.ProxyServer(options);
-    server.start();
+    new proxy.ProxyServer(options).start()
 };
