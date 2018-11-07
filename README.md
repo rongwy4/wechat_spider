@@ -12,15 +12,11 @@ wechat_spider
 
 这个项目是使用打理的方式抓取微信公众账号文章，首先你需要了解一下现在抓取微信公众账号的两种主流方法，请参考我的文章：
 
-[如何优雅的抓取微信公众号历史文章](https://mp.weixin.qq.com/s?__biz=MjM5NDA0Mjc0MQ==&mid=2651552202&idx=1&sn=832cd8e9c4f5babcd20e6a52ee03611e&chksm=bd721fd08a0596c6005f9c77f1c7b1f06fef2cceebd67dde0f33c822f8053d7c521a753c0101&scene=0&key=31688975937a18944006a2d2a5b0c346a7e091a3f473e69af65ebce0e0722a9bdac3cc4281c2eb40f110c3b87a727d8f42b8265a7c1cb20744f74eadf0178023744783aab775c2d47ac7a30b16c65548&ascene=0&uin=OTM1MDQxMDQw)
-
 所以现在一般有两种做法，一种通过搜狗微信，一种通过代理的方式抓取，这个项目就是使用代理的方式抓取。
-
-我本来是写了更复杂的工具，使用 Node.js 的 anyproxy 加上 php 的 Laravel 框架，完成这些功能，但是某天洗澡的时候终于想通了，我其实把一个工具复杂化了，这个工具本来是很简单的，我给一位媒体朋友指导了一下，他也很快就用起来了。
 
 ## 输出
 
-输出有两个东西，一个是 wechat.sqlite，一个是 wechat.csv，wechat.csv 需要通过命令 `wechat_spider csv` 来生成。
+输出有一个文件wechat.sqlite， 是sqlite的数据库文件。
 
 如下是我的公众账号对应的数据：
 
@@ -116,11 +112,9 @@ Press rs for restarting the process.
 
 ### 首次打开需要安装证书
 
-第一步：Mac 在终端下，Windows 在 cmd 下打开工具：
+第一步：电脑上安装证书
 
-$ wechat_spider
-
-首次需要信任证书。
+应用启动后，首次需要信任证书。
 
 默认会打开证书的文件夹，如果没有打开，浏览器打开 http://localhost:8002/fetchCrtFile ，也能获取rootCA.crt文件，获取到根证书后，双击，根据操作系统提示，信任rootCA：
 
@@ -129,7 +123,7 @@ $ wechat_spider
 * Mac
   * ![https://t.alipayobjects.com/tfscom/T1NwFfXn0oXXXXXXXX.jpg_400x.jpg](https://t.alipayobjects.com/tfscom/T1NwFfXn0oXXXXXXXX.jpg_400x.jpg)
 
-第二步：使用手机代理：
+第二步：使用手机代理并安装证书：
 
 * 首次手机需要安装证书，浏览器打开：http://localhost:8002/qr_root ，使用微信扫描二维码，[重要] 用浏览器打开：
 
@@ -143,7 +137,6 @@ $ wechat_spider
 * 设置手机代理为电脑：
 
   * <img src="https://raw.githubusercontent.com/lijinma/MyBox/master/spider/spider_7.jpeg" width="300px">
-
   * <img src="https://raw.githubusercontent.com/lijinma/MyBox/master/spider/spider_8.jpeg" width="300px">
   
 第三步：选择一个微信公众号，点击查看历史记录
@@ -151,11 +144,7 @@ $ wechat_spider
 * <img src="https://raw.githubusercontent.com/lijinma/MyBox/master/spider/spider_9.jpeg" width="300px">
 * <img src="https://raw.githubusercontent.com/lijinma/MyBox/master/spider/spider_10.jpeg" width="300px">
 
-第四步：等待出现页面“一个公众号采集完成”，就可以生成 csv 了
-
-```bash
- $ wechat_spider csv
-```
+第四步：手机开始自动抓取数据，直到所有文章抓取完成
 
 ## 注
 
