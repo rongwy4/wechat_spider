@@ -1,5 +1,4 @@
 var proxy = require("anyproxy");
-let admin = require("./lib/admin");
 
 module.exports = function () {
     //create cert when you want to use https features
